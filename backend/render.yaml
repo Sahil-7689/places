@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tourist-places-api
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEOAPIFY_API_KEY
+        sync: false
